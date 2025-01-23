@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Microservice.Appointments.Api.props" />
+</Project>

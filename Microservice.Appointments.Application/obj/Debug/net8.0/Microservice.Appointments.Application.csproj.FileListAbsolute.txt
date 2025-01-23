@@ -1,0 +1,15 @@
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\bin\Debug\net8.0\Microservice.Appointments.Application.deps.json
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\bin\Debug\net8.0\Microservice.Appointments.Application.dll
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\bin\Debug\net8.0\Microservice.Appointments.Application.pdb
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\bin\Debug\net8.0\Microservice.Appointments.Domain.dll
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\bin\Debug\net8.0\Microservice.Appointments.Domain.pdb
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\obj\Debug\net8.0\Microservice.Appointments.Application.csproj.AssemblyReference.cache
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\obj\Debug\net8.0\Microservice.Appointments.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\obj\Debug\net8.0\Microservice.Appointments.Application.AssemblyInfoInputs.cache
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\obj\Debug\net8.0\Microservice.Appointments.Application.AssemblyInfo.cs
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\obj\Debug\net8.0\Microservice.Appointments.Application.csproj.CoreCompileInputs.cache
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\obj\Debug\net8.0\Microser.D0A2FAF2.Up2Date
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\obj\Debug\net8.0\Microservice.Appointments.Application.dll
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\obj\Debug\net8.0\refint\Microservice.Appointments.Application.dll
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\obj\Debug\net8.0\Microservice.Appointments.Application.pdb
+D:\Proyectos\Hospital\Services\Microservice.Appointments.Solution\Microservice.Appointments.Application\obj\Debug\net8.0\ref\Microservice.Appointments.Application.dll
