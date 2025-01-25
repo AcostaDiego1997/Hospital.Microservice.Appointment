@@ -13,9 +13,8 @@ namespace Microservice.Appointments.Application.Interfaces.Repository
         void Add(Appointment appointment);
         List<Appointment> GetAll();
         Appointment? Get(int doctorId, int patientId, DateTime date);
-        //List<Appointment> GetByPatient(int patientId, DateTime date);
-        //List<Appointment> GetByDoctor(int doctorId, DateTime date);
+        List<Appointment> GetByPatient(int patientId);
+        List<Appointment> GetByDoctor(int doctorId);
         int? Delete(int doctorId, int patientId, DateTime date);
-        int UniqueAppointmentValidation(Appointment_DTO dto);
     }
 }

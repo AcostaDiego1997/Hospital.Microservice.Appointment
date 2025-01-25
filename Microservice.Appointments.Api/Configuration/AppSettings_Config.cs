@@ -15,6 +15,7 @@ namespace Microservice.Appointments.Api.Configuration
             AppSettings_Helper.Auth = _appSettings.Auth;
             AppSettings_Helper.Environment = _appSettings.Environment;
             AppSettings_Helper.ConnectionStrings = _appSettings.ConnectionStrings;
+            AppSettings_Helper.Services = _appSettings.Services;
 
             builder.Services.AddSingleton(_appSettings);
         }

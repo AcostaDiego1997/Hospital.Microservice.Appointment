@@ -16,7 +16,7 @@ namespace Microservice.Appointments.Infrastructure.Repositories
 
         public void Add(Appointment appointment)
         {
-            throw new NotImplementedException();
+            _dataContext.Appointments.Add(appointment);
         }
 
         public int? Delete(int doctorId, int patientId, DateTime date)
@@ -34,7 +34,12 @@ namespace Microservice.Appointments.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public int UniqueAppointmentValidation(Appointment_DTO dto)
+        public List<Appointment> GetByDoctor(int doctorId)
+        {
+            return _dataContext.Appointments.Where(app => app.DoctorId == doctorId).ToList();
+        }
+
+        public List<Appointment> GetByPatient(int patientId)
         {
             throw new NotImplementedException();
         }

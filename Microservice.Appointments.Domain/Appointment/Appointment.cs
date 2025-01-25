@@ -9,8 +9,8 @@ namespace Microservice.Appointments.Domain.Appointment
     public class Appointment
     {
         private int _id;
-        private readonly int _doctorId;
-        private readonly int _patientId;
+        private int _doctorId;
+        private int _patientId;
         private DateTime _date;
         private bool _status;
 
@@ -32,6 +32,8 @@ namespace Microservice.Appointments.Domain.Appointment
         public int PatientId { get => _patientId; }
         public DateTime Date { get => _date; }
         public bool Status { get => _status; }
+        public void SetPatientId(int newPatientId) { _patientId = newPatientId; }
+        public void SetDoctorId(int newDoctortId) { _doctorId = newDoctortId; }
         public void SetDate(DateTime newDate) { _date = newDate; }
         public void SetStatus(bool newStatus) { _status = newStatus; }
 

@@ -11,5 +11,6 @@ namespace Microservice.Appointments.Application.AppSettings.Entities
         public string Environment { get; set; } = null!;
         public ConnectionStrings ConnectionStrings { get; set; } = null!;
         public Auth Auth { get; set; } = null!;
+        public Services Services { get; set; } = null!;
     }
 }

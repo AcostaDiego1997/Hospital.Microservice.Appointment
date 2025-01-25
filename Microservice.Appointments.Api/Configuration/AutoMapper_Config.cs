@@ -1,4 +1,6 @@
-﻿namespace Microservice.Appointments.Api.Configuration
+﻿using Microservice.Appointments.Application.Automapper;
+
+namespace Microservice.Appointments.Api.Configuration
 {
     public class AutoMapper_Config
     {
@@ -6,7 +8,7 @@
         {
             services.AddAutoMapper(prf =>
             {
-                //prf.AddProfile<Patient_Mapper>();
+                prf.AddProfile<Appointment_Mapper>();
             });
         }
     }

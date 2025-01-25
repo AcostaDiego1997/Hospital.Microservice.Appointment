@@ -10,18 +10,11 @@
 		<PackageReference Include="AutoMapper" Version="13.0.1" />
 		<PackageReference Include="MediatR" Version="12.4.1" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Microservice.Appointments.Domain\Microservice.Appointments.Domain.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Automapper\" />
-	  <Folder Include="Commands\Handlers\" />
-	  <Folder Include="Commands\Request\" />
-	  <Folder Include="Queries\Handlers\" />
-	  <Folder Include="Queries\Request\" />
 	</ItemGroup>
 
 </Project>
