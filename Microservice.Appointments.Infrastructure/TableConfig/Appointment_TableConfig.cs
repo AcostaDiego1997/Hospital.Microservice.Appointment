@@ -12,8 +12,8 @@ namespace Microservice.Appointments.Infrastructure.TableConfig
             builder.HasKey(p => p.Id);
 
             builder.Property(p => p.Id).ValueGeneratedOnAdd();
-            builder.Property(p => p.DoctorId).HasColumnName("DoctorId").IsRequired();
-            builder.Property(p => p.PatientId).HasColumnName("PatientId").IsRequired();
+            builder.Property(p => p.DoctorCredential).HasColumnName("DoctorCredential").IsRequired();
+            builder.Property(p => p.PatientDni).HasColumnName("PatientDni").IsRequired();
             builder.Property(p => p.Date).HasColumnName("Date").HasField("_date");
             builder.Property(p => p.Status).HasColumnName("Status");
         }

@@ -8,8 +8,8 @@ namespace Microservice.Appointments.Application.DTO.Patient
 {
     public class Appointment_DTO
     {
-        public int PatientId { get; set; }
-        public int DoctorId { get; set; }
+        public int PatientDni { get; set; }
+        public int DoctorCredential { get; set; }
         public DateTime Date { get; set; }
     }
 }

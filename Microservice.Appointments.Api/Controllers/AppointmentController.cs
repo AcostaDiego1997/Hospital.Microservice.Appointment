@@ -19,19 +19,6 @@ namespace Microservice.Appointments.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("patient/{dni}")]
-        public async Task<IActionResult> GetAppointmentsByPatient(int dni)
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
-
         [HttpGet("doctor/{credential}")]
         public async Task<IActionResult> GetAppointmentsBydoctor(int credential)
         {

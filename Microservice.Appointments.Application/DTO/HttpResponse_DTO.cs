@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Microservice.Appointments.Application.DTO
 {
-    public class HttpResponse_DTO
+    public class HttpResponse_DTO<T>
     {
         public bool IsSuccess { get; set; }
         public string Message { get; set; } = null!;
-        public object Entity { get; set; } 
+        public T Entity { get; set; } 
     }
 }

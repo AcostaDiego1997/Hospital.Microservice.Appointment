@@ -36,10 +36,15 @@ namespace Microservice.Appointments.Application.Queries.Handlers
 
         public async Task<List<DoctorAppointments_DTO>> Handle(AppointmentsByDoctor_Query request, CancellationToken cancellationToken)
         {
+
+            // obtengo los pacientes asociados al doctor
             List<Appointment> _appointmentsList = _unitOfWork.Appointment_Repository.GetByDoctor(request.Credential);
 
+            if(_appointmentsList.Count == 0)
+                return [];
+
             _docEndpoints.TryGetValue("Get", out string docGet);
-            _patEndpoints.TryGetValue("Get", out string patGet);
+            _patEndpoints.TryGetValue("Summary", out string patGet);
 
             HttpClient client = new();
             string url = docGet + request.Credential;
@@ -53,16 +58,17 @@ namespace Microservice.Appointments.Application.Queries.Handlers
                 {
                     var res = await response.Content.ReadAsStringAsync();
 
-                    var test = JsonConvert.DeserializeObject<HttpResponse_DTO>(res);
-                    if (test.IsSuccess && test.Entity is Doctor_DTO doctorDto)
-                    {
-                        Console.WriteLine();
-                    }
-                    else
-                    {
-                        // Manejar casos de error (IsSuccess == false o Entity no es Doctor_DTO)
+                    HttpResponse_DTO<Doctor_DTO>? test = JsonConvert.DeserializeObject<HttpResponse_DTO<Doctor_DTO>>(res) ?? throw new Exception("Error en solicitud de Doctor");
+
+                    if (!test.IsSuccess)
                         throw new Exception("Error al obtener el Doctor: ");
-                    }
+
+                    _doctor = test.Entity;
+
+                    var r = $"{patGet}=dnis={string.Join(",", _appointmentsList.Select(ap => ap.PatientDni))}";
+
+
+                    HttpResponseMessage patResponse = await client.GetAsync($"{patGet}=dnis={string.Join(",",r)}");
                 }
 
                 return _output;

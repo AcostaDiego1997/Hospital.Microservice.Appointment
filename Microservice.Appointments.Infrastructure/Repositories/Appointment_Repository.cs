@@ -1,4 +1,5 @@
-﻿using Microservice.Appointments.Application.DTO;
+﻿using Microservice.Appointments.Application.AppSettings.Entities;
+using Microservice.Appointments.Application.DTO;
 using Microservice.Appointments.Application.Interfaces.Repository;
 using Microservice.Appointments.Domain.Appointment;
 using Microservice.Appointments.Infrastructure.Context;
@@ -19,12 +20,12 @@ namespace Microservice.Appointments.Infrastructure.Repositories
             _dataContext.Appointments.Add(appointment);
         }
 
-        public int? Delete(int doctorId, int patientId, DateTime date)
+        public int? Delete(int doctorId, int PatientDni, DateTime date)
         {
             throw new NotImplementedException();
         }
 
-        public Appointment? Get(int doctorId, int patientId, DateTime date)
+        public Appointment? Get(int doctorId, int PatientDni, DateTime date)
         {
             throw new NotImplementedException();
         }
@@ -36,12 +37,22 @@ namespace Microservice.Appointments.Infrastructure.Repositories
 
         public List<Appointment> GetByDoctor(int doctorId)
         {
-            return _dataContext.Appointments.Where(app => app.DoctorId == doctorId).ToList();
+            return _dataContext.Appointments.Where(app => app.DoctorCredential == doctorId).ToList();
         }
 
-        public List<Appointment> GetByPatient(int patientId)
+        public List<Appointment> GetByPatient(int PatientDni)
         {
             throw new NotImplementedException();
+        }
+
+        public List<int> GetDoctorsByPatient(int PatientDni)
+        {
+            return _dataContext.Appointments.Where(app => app.PatientDni == PatientDni).Select(app => app.DoctorCredential).ToList();
+        }
+
+        public List<int> GetPatientsByDoctor(int doctorId)
+        {
+            return _dataContext.Appointments.Where(app => app.DoctorCredential == doctorId).Select(app => app.PatientDni).ToList();
         }
     }
 }

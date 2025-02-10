@@ -14,7 +14,9 @@ namespace Microservice.Appointments.Application.Interfaces.Repository
         List<Appointment> GetAll();
         Appointment? Get(int doctorId, int patientId, DateTime date);
         List<Appointment> GetByPatient(int patientId);
+        List<int> GetDoctorsByPatient(int patientId);
         List<Appointment> GetByDoctor(int doctorId);
+        List<int> GetPatientsByDoctor(int doctorId);
         int? Delete(int doctorId, int patientId, DateTime date);
     }
 }
