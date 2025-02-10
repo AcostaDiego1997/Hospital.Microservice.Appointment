@@ -72,5 +72,6 @@ $RECYCLE.BIN/
 
 # Ignorar el archivo appsettings de la API
 appsettings.json
+Microservice.Appointments.Api/appsettings.json
 Microservice.Appointments.Api/appsettings*.json
 Microservice.Appointments.Api/Configuration/
