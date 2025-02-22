@@ -9,6 +9,7 @@ namespace Microservice.Appointments.Api.Configuration
             services.AddAutoMapper(prf =>
             {
                 prf.AddProfile<Appointment_Mapper>();
+                prf.AddProfile<AppointmentsByDoctor_Mapper>();
             });
         }
     }

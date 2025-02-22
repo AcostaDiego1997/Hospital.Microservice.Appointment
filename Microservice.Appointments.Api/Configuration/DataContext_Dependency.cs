@@ -11,7 +11,7 @@ namespace Microservice.Appointments.Api.Configuration
     {
         public DataContext_Dependency(IServiceCollection services, AppSettings settings)
         {
-            string conn = AppSettings_Helper.GetConnectionString(settings.Environment);
+            string conn = AppSettings_Helper.DbConnectionString;
 
 
             services.AddDbContext<DataContext>(options => options.UseSqlServer(conn)

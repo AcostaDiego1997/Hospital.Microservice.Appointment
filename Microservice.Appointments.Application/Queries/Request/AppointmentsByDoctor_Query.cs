@@ -1,15 +1,15 @@
 ﻿using MediatR;
-using Microservice.Appointments.Application.DTO;
+using Microservice.Appointments.Application.DTO.Appointment;
 
 namespace Microservice.Appointments.Application.Queries.Request
 {
-    public class AppointmentsByDoctor_Query : IRequest<List<DoctorAppointments_DTO>>
+    public class AppointmentsByDoctor_Query : IRequest<DoctorAppointments_DTO?>
     {
-        private readonly int _credential;
-        public AppointmentsByDoctor_Query(int credential)
+        private readonly int _id;
+        public AppointmentsByDoctor_Query(int id)
         {
-            _credential = credential;   
+            _id = id;   
         }
-        public int Credential { get => _credential; }
+        public int Id { get => _id; }
     }
 }

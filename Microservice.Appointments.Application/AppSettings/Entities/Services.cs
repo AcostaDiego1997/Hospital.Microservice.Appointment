@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,12 +16,12 @@ namespace Microservice.Appointments.Application.AppSettings.Entities
     public class Doctor
     {
         public Url Url { get; set; } = null!;
-        public Endpoint Endpoint { get; set; } = null!;
+        public Endpoint_Doctor Endpoint_Doctor { get; set; } = null!;
     }
     public class Patient
     {
         public Url Url { get; set; } = null!;
-        public Endpoint Endpoint { get; set; } = null!;
+        public Endpoint_Patient Endpoint_Patient { get; set; } = null!;
     }
 
     public class Url
@@ -29,9 +30,12 @@ namespace Microservice.Appointments.Application.AppSettings.Entities
         public string Test { get; set; } = null!;
         public string Prod { get; set; } = null!;
     }
-    public class Endpoint
+    public class Endpoint_Doctor
     {
-        public string Get { get; set; } = null!;
-        public string GetAll { get; set; } = null!;
+        public string Summaries { get; set; } = null!;
+    }
+    public class Endpoint_Patient
+    {
+        public string Summaries { get; set; } = null!;
     }
 }

@@ -37,7 +37,7 @@ namespace Microservice.Appointments.Infrastructure.Repositories
 
         public List<Appointment> GetByDoctor(int doctorId)
         {
-            return _dataContext.Appointments.Where(app => app.DoctorCredential == doctorId).ToList();
+            return _dataContext.Appointments.Where(app => app.DoctorId == doctorId).ToList();
         }
 
         public List<Appointment> GetByPatient(int PatientDni)
@@ -47,12 +47,12 @@ namespace Microservice.Appointments.Infrastructure.Repositories
 
         public List<int> GetDoctorsByPatient(int PatientDni)
         {
-            return _dataContext.Appointments.Where(app => app.PatientDni == PatientDni).Select(app => app.DoctorCredential).ToList();
+            return _dataContext.Appointments.Where(app => app.PatientId == PatientDni).Select(app => app.DoctorId).ToList();
         }
 
         public List<int> GetPatientsByDoctor(int doctorId)
         {
-            return _dataContext.Appointments.Where(app => app.DoctorCredential == doctorId).Select(app => app.PatientDni).ToList();
+            return _dataContext.Appointments.Where(app => app.DoctorId == doctorId).Select(app => app.PatientId).ToList();
         }
     }
 }

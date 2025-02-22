@@ -1,8 +1,6 @@
 ﻿using MediatR;
-using Microservice.Appointments.Application.AppSettings;
 using Microservice.Appointments.Application.Commands.Request;
-using Microservice.Appointments.Application.DTO;
-using Microservice.Appointments.Application.DTO.Patient;
+using Microservice.Appointments.Application.DTO.Appointment;
 using Microservice.Appointments.Application.Queries.Request;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,12 +17,15 @@ namespace Microservice.Appointments.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("doctor/{credential}")]
-        public async Task<IActionResult> GetAppointmentsBydoctor(int credential)
+        [HttpGet("doctor/{id}")]
+        public async Task<IActionResult> GetAppointmentsBydoctor(int id)
         {
             try
             {
-                List<DoctorAppointments_DTO> output = await _mediator.Send(new AppointmentsByDoctor_Query(credential));
+                DoctorAppointments_DTO? output = await _mediator.Send(new AppointmentsByDoctor_Query(id));
+
+                if (output == null)
+                    return NotFound("El doctor no cuenta con citas agendadas.");
 
                 return Ok(output);
             }
@@ -47,7 +48,7 @@ namespace Microservice.Appointments.Api.Controllers
                 return Ok(new
                 {
                     IsSuccess = true,
-                    Message = "Paciente insertado con exito",
+                    Message = "Cita agendada con exito",
                     Entity = dto
                 });
             }

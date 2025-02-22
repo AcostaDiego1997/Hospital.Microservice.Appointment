@@ -34,13 +34,13 @@ namespace Microservice.Appointments.Infrastructure.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("Date");
 
-                    b.Property<int>("DoctorCredential")
+                    b.Property<int>("DoctorId")
                         .HasColumnType("int")
-                        .HasColumnName("DoctorCredential");
+                        .HasColumnName("DoctorId");
 
-                    b.Property<int>("PatientDni")
+                    b.Property<int>("PatientId")
                         .HasColumnType("int")
-                        .HasColumnName("PatientDni");
+                        .HasColumnName("PatientId");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit")

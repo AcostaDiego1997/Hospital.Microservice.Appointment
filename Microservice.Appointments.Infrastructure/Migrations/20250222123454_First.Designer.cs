@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Microservice.Appointments.Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250123230157_First")]
+    [Migration("20250222123454_First")]
     partial class First
     {
         /// <inheritdoc />
